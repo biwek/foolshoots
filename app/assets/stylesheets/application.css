@@ -64,8 +64,8 @@ table {
 
 
 @font-face {
-  font-family: 'OldNewspaper';
-  src: url('/fonts/OldNewspaperTypes.ttf') format('truetype');
+  font-family: 'bebas';
+  src: url('/fonts/BebasNeue.otf') format('opentype');
 }
 
 @font-face {
@@ -79,38 +79,72 @@ table {
 
 img {
 	width: 140px;
-	-webkit-transition:width 0.8s; /* For Safari 3.1 to 6.0 */
-	transition:width 0.8s;
+	-webkit-transition:width 0.5s; /* For Safari 3.1 to 6.0 */
+	transition:width 0.5s;
 	margin-top: -3px;
+	cursor: pointer;
 }
 
 img:hover {
-	width: 120px;
+	width: 130px;
 }
 
 .small {
 	position: relative;
 }
 
+.social,
 .titles-first,
 .titles-second {
 	background: #fff;
 	color: #333;
 	position: absolute;
 	left: 0;
-	padding: 10px;
+	padding: 10px 10px 5px 10px;
 	border-left: 5px solid #cc181e;
+	font-family: 'bebas';
+
 }
 
 .titles-first{
 	top: 120px;
 }
 
+.titles-first img {
+	width: 240px;
+	-webkit-transition:width 0.8s;
+	transition:width 0.8s;
+}
+
+.titles-first img:hover {
+	width: 200px;
+}
+
 .titles-second {
-	top: 220px;
+	top: 230px;
+}
+
+.social {
+	top: 310px;
+}
+
+.social img {
+	width: 40px;
+	padding: 0 5px;
+	opacity: 0.6;
+	-webkit-transition:opacity 0.5s; /* For Safari 3.1 to 6.0 */
+	transition:opacity 0.5s;
+}
+
+.social img:hover {
+	opacity: 1;
 }
 
 h2 {
-	font-size: 30px;
-	font-family: 'OldNewspaper';
+	font-size: 40px;
+}
+
+p {
+	font-size: 20px;
+	padding: 0 0 10px 0;
 }

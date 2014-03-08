@@ -54,4 +54,5 @@ function onDataLoaded(instagram_data) {
 $(document).ready(function(){
 	grabYImages(access_parameters);
 	grabImages(access_parameters);
+	$("#loading").hide();
 });
