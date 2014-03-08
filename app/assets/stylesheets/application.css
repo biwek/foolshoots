@@ -62,14 +62,10 @@ table {
 }
 
 
- body {
- background-color: #0084B4 !important;
- font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
- }
 
 @font-face {
   font-family: 'OldNewspaper';
-  src: url('../assets/OldNewspaperTypes.ttf') format('truetype');
+  src: url('/fonts/OldNewspaperTypes.ttf') format('truetype');
 }
 
 @font-face {
@@ -77,41 +73,44 @@ table {
   src: url('/fonts/Cabin.otf') format('opentype');
 }
 
- .box {
- 	width: 300px;
-	height: 300px;
-	background: radial-gradient(#ddd -40%, #0084B4 70%); 
-	opacity: 0.75;
- }
+ body {
+	background: #222;
+}
 
- .coming-soon {
-  position: absolute;
-	top:0;
-	bottom: 0;
+img {
+	width: 140px;
+	-webkit-transition:width 0.8s; /* For Safari 3.1 to 6.0 */
+	transition:width 0.8s;
+	margin-top: -3px;
+}
+
+img:hover {
+	width: 120px;
+}
+
+.small {
+	position: relative;
+}
+
+.titles-first,
+.titles-second {
+	background: #fff;
+	color: #333;
+	position: absolute;
 	left: 0;
-	right: 0;
-	margin: auto;
- }
+	padding: 10px;
+	border-left: 5px solid #cc181e;
+}
 
- img, h2 {
-  position: absolute; 
-  margin: -50px 0 0 -50px;
- }
+.titles-first{
+	top: 120px;
+}
 
- img {
- 	width: 200px;
- 	left: 32%;
- 	top: 30%
- }
+.titles-second {
+	top: 220px;
+}
 
- h2 {
-  top: 70%;
- 	font-family: 'Cabin';
- 	vertical-align: middle;
- 	text-align: center;
- 	font-size: 35px;
- 	left: 23%;
- 	color: #333;
- }
-
-
+h2 {
+	font-size: 30px;
+	font-family: 'OldNewspaper';
+}
