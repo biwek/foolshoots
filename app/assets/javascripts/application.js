@@ -16,7 +16,6 @@
 //= require_tree .
 
 var tag = 'canon';
-var count = 5;
 var access_token = '2994756.3b20e6c.5029eb8613314357b6739a886a6d85e0';
 var access_parameters = {access_token:access_token};
 var client_id = '3b20e6c61d2a4438ad17b901eb2f1cca';
@@ -31,28 +30,40 @@ function grabYImages(access_parameters) {
 	$.getJSON(instagramUrlYugal, access_parameters, onDataLoaded)
 }
 
+function grabSImages(access_parameters) {
+	var instagramUrlSuraj = 'https://api.instagram.com/v1/users/13450504/media/recent/?callback=?&count=20';
+	$.getJSON(instagramUrlSuraj, access_parameters, onDataLoaded);
+}
+
+function grabYoImages(access_parameters) {
+	var instagramUrlYogesh = 'https://api.instagram.com/v1/users/24120977/media/recent/?callback=?&count=20';
+	$.getJSON(instagramUrlYogesh, access_parameters, onDataLoaded);
+}
+
 function onDataLoaded(instagram_data) {  
-		if(instagram_data.meta.code == 200) {
-			var photos = instagram_data.data;
-			if(photos.length > 0) {
-				for (var key in photos ){
-  				var photo = photos[key];
-          try {
-  				  $('.images').append("<img class='small' src=" + photo.images.thumbnail.url + ">");
-          } catch(err) {}
-				}
-			} else {   					
-				$('.images').append('Sorry no snaps!');
+	if(instagram_data.meta.code == 200) {
+		var photos = instagram_data.data;
+		if(photos.length > 0) {
+			for (var key in photos ){
+				var photo = photos[key];
+        try {
+				  $('.images').append("<img class='small' src=" + photo.images.thumbnail.url + ">");
+        } catch(err) {}
 			}
-		} else  {
-			var error = instagram_data.meta.error_message;
-			$('.images').append("Oops. Error occurred: " + error);
+		} else {   					
+			$('.images').append('Sorry no snaps!');
 		}
+	} else  {
+		var error = instagram_data.meta.error_message;
+		$('.images').append("Oops. Error occurred: " + error);
+	}
 }
 
 
 $(document).ready(function(){
+	grabSImages(access_parameters);
 	grabYImages(access_parameters);
 	grabImages(access_parameters);
+	grabYoImages(access_parameters);
 	$("#loading").hide();
 });
